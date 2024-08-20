@@ -1,6 +1,11 @@
+import { defaults } from 'autoprefixer';
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
@@ -188,7 +193,15 @@ export default {
       '6xl': '72rem',
       '7xl': '80rem',
     },
-    container: {},
+    container: {
+      center: true,
+      padding:{
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '3rem',
+        xl:'4rem',
+      },
+    },
     content: {
       none: 'none',
     },
@@ -321,6 +334,8 @@ export default {
         '"Courier New"',
         'monospace',
       ],
+      Matemasie:['Matemasie','serif'],
+      GreyQo:['"Grey Qo"','sans'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
