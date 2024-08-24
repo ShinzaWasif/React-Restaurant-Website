@@ -39,20 +39,20 @@ const DropdownLinks=[
     },
 ];
 
-const Navbar = () => {
+const Navbar = ({handlePopup}) => {
   return (
     <>
-        <div className='bg-red-300 shadow-sm'>
+        <div data-aos='fade' className='shadow-sm'>
         <div className='container flex justify-between py-4 sm:py-3'>
             {/* logo section */}
-            <div className='font-serif font-bold text-3xl bg-blue-400'>Logo</div>
+            <div className='font-serif text-pink-800 flex items-center font-bold text-xl sm:text-3xl'>GoodFood</div>
             {/* Navlinks section */}
-            <div className='bg-green-400'>
+            <div className=''>
                 <ul className='flex items-center gap-10 font-bold'>
                     {NavLinks.map(
                         (navlink)=>
                             <li key={navlink.id}>
-                                <a className='inline-block hover:text-blue-700 text-xl font-semibold' href={navlink.link}>{navlink.name}</a>
+                                <a className='hidden sm:inline-block hover:text-pink-600 text-xl font-semibold' href={navlink.link}>{navlink.name}</a>
                                 </li>
                         
                     )}
@@ -67,8 +67,8 @@ const Navbar = () => {
                     )} */}
 
                     {/* Simple dropdown and links */}
-                    <li className='cursor-pointer group'>
-                        <a className='inline-block hover:text-blue-700 text-xl font-semibold'>
+                    <li className='hidden sm:block cursor-pointer group'>
+                        <a className='inline-block hover:text-pink-600 text-xl font-semibold'>
                             <div className='flex items-center gap-[2px] py-2'>
                             Categories
                             <span><FaCaretDown className='group-hover:rotate-180 duration-300'/></span>
@@ -87,9 +87,9 @@ const Navbar = () => {
 
                     {/* Login Button */}
                     <li>
-                        <button className='flex justify-center items-center gap-2 bg-pink-700 text-white text-lg py-2 px-3 rounded-xl hover:scale-105 duration-300'>
+                        <button className='flex justify-center items-center gap-2 bg-pink-700 text-white text-sm sm:text-lg py-2 px-3 rounded-xl hover:scale-105 duration-300' onClick={handlePopup}>
                             <FaUser/>
-                            My Account
+                            Login
                         </button>
                     </li>
                 </ul>
